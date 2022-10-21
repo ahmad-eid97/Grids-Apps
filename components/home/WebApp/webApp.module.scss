@@ -1,0 +1,134 @@
+@import '../../../styles/mixins.scss';
+
+.webApp {
+  margin-top: 100px;
+  .head {
+    margin-bottom: 50px;
+    h1, p {
+      text-align: center !important;
+    }
+    h1 {
+      font-size: 3rem;
+      color: var(--main-color);
+    }
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+    @include xs {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  .imageSide {
+    @include md {
+      img {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+
+  .features {
+    .one {
+      display: grid;
+      align-items: center;
+      gap: 10px;
+      max-width: 70%;
+      border: 1px solid rgb(190, 190, 190);
+      padding: 20px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      grid-template-columns: repeat(12, 1fr);
+      cursor: pointer;
+      .image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 10px;
+        width: 100px;
+        height: 100px;
+        grid-column: span 3;
+        .rotator {
+          position: absolute;
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          border: 1px solid var(--border-color);
+          &:after, &:before {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+          }
+          &:after {
+            top: 10px;
+            left: 12px;
+          }
+          &:before {
+            bottom: 10px;
+            right: 12px;
+          }
+        }
+        @include xs {
+          margin-bottom: 10px;
+        }
+      }
+      .details {
+        grid-column: span 9;
+      }
+      &:hover {
+        background: url('../../../public//imgs/webApp/back.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        .rotator {
+          animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+      &:first-of-type {
+        background: url('../../../public//imgs/webApp/back.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: #fff;
+        .rotator {
+          animation: rotate 3s linear infinite;
+        }
+        @keyframes rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          100% {
+            transform: rotate(360deg);
+          }
+        }
+      }
+      @include xxl {
+        max-width: 90%;
+      }
+      @include md {
+        margin: 20px auto;
+      }
+      @include xs {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

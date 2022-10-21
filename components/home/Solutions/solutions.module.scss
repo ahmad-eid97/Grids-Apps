@@ -1,0 +1,77 @@
+@import '../../../styles/mixins.scss';
+
+.solutions {
+  margin-top: 200px;
+  margin-bottom: 250px;
+  .head {
+    margin-bottom: 150px;
+    h1, p {
+      text-align: center !important;
+    }
+    h1 {
+      color: var(--main-color);
+      font-size: 3rem;
+      @include xs {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+    @include md {
+      margin-bottom: 50px;
+    }
+  }
+  .imageGrid {
+    @include md {
+      display: none;
+    }
+  }
+  .wrapper {
+    background: url('../../../public/imgs/solutions/solutionsBack.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    max-height: 500px;
+    margin: auto;
+    @include md {
+      max-height: unset !important;
+    }
+    .imageSide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      img {
+        position: relative;
+        top: -80px;
+        object-fit: contain;
+      }
+    }
+
+    .solutionsSwiper {
+      margin-top: -200px;
+      @include md {
+        margin-top: 0px;
+        padding: 10px 0 40px;
+      }
+      .slide {
+        color: #fff;
+        padding: 20px;
+        i {
+          font-size: 4.5rem;
+        }
+        p {
+          font-size: 1.2rem;
+          opacity: 0.9;
+        }
+      }
+    }
+  }
+  @include md {
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+}

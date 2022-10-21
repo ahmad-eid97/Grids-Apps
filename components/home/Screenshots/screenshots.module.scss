@@ -1,0 +1,77 @@
+@import '../../../styles/mixins.scss';
+
+.screenshots {
+  margin: 150px 0;
+  // background: var(--main-background-image);
+  background: #5718D3;
+  padding: 100px 0;
+  color: #fff;
+
+  .swiperWapper {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 7%;
+      left: 100%;
+      background: url('/imgs/screenshots/frame-shape.png');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      width: 800px;
+      height: 80%;
+      @include lg {
+        width: 800px;
+      }
+      @include md {
+        width: 800px;
+      }
+      @include sm {
+        content: none;
+      }
+    }
+    &.ar {
+      &::after {
+        content: none;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 7%;
+        right: 90%;
+        background: url('/imgs/screenshots/frame-shape.png');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 800px;
+        height: 80%;
+        @include lg {
+          width: 800px;
+        }
+        @include md {
+          width: 800px;
+        }
+        @include sm {
+          content: none;
+        }
+      }
+    }
+  }
+
+  .swiper {
+    @include sm {
+      max-width: 300px;
+    }
+  }
+
+  h1 {
+    font-size: 3rem;
+    @include xs {
+      font-size: 2.5rem;
+    }
+  }
+  p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+}

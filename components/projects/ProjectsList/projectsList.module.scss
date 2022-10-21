@@ -1,0 +1,88 @@
+@import '../../../styles/extends.scss';
+
+.projectsList {
+  margin: 100px 0;
+  position: relative;
+  .backImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    object-fit: contain;
+  }
+  .project {
+    margin-bottom: 200px;
+    position: relative;
+    z-index: 2;
+    .imageSide {
+      background: var(--main-background-image);
+      position: relative;
+      animation: rotate 8s forwards infinite;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      img {
+        padding: 20px;
+        position: relative;
+        z-index: 2;
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -50px;
+        left: 40%;
+        width: 150px;
+        height: 150px;
+        background: var(--main-background-image);
+        transform: rotate(-45deg);
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        @include md {
+          left: 35%;
+        }
+        @include xs {
+          width: 80px;
+          height: 80px;
+          bottom: -30px;
+          left: 40%;
+        }
+      }
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        25% {
+          transform: rotate(3deg);
+        }
+        50% {
+          transform: rotate(0deg);
+        }
+        75% {
+          transform: rotate(-3deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      @include md {
+        margin-bottom: 50px;
+      }
+      @include xs {
+        img {
+          padding: 10px;
+        }
+      }
+    }
+    .details {
+      h1 {
+        @include xs {
+          font-size: 1.5rem;
+        }
+      }
+      button {
+        @extend %mainBtn;
+        margin-top: 30px;
+      }
+    }
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+  }
+}

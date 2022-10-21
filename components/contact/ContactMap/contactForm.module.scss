@@ -1,0 +1,67 @@
+@import '../../../styles/mixins.scss';
+
+.contactMap {
+  margin-top: -100px;
+  margin-bottom: 200px;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+      width: 200px;
+      @include xs {
+        width: 150px;
+      }
+    }
+    h1 {
+      color: var(--main-color);
+      font-size: 3rem;
+      font-size: 20px 0;
+      @include xs {
+        font-size: 2.5rem;
+      }
+    }
+    .map {
+      position: relative;
+      margin-top: 30px;
+      iframe {
+        border-radius: 20px;
+        width: 1000px;
+        height: 500px;
+        position: relative;
+        z-index: 2;
+        @include md {
+          width: 600px;
+        }
+        @include sm {
+          width: 500px;
+          height: 400px;
+        }
+        @include xs {
+          width: 350px;
+        }
+      }
+      .back {
+        width: 1000px;
+        height: 500px;
+        background: var(--main-background-image);
+        border-radius: 20px;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        z-index: 1;
+        @include md {
+          width: 600px;
+        }
+        @include sm {
+          width: 500px;
+          height: 400px;
+        }
+        @include xs {
+          width: 350px;
+        }
+      }
+    }
+  }
+}

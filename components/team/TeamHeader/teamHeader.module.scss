@@ -1,0 +1,38 @@
+.teamHeader {
+  background: url('/imgs/about/page-header.png');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  position: relative;
+  color: #fff;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -1%;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background: url('/imgs/about/page-header-wave.png');
+    height: 220px;
+    background-position: center;
+    background-size: cover;
+  }
+  .head {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    h1 {
+      font-size: 3rem;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+@import '../../styles/mixins.scss';
+
+.footer {
+  background: url('../../public/imgs/footer/footer-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  padding-top: 100px;
+  padding-bottom: 20px;
+  margin-top: 100px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    right: 0;
+    background: url('../../public/imgs/footer/footer-shape.png') no-repeat center bottom;
+    background-size: cover;
+    height: 208px;
+    width: 100%;
+    max-width: 100%;
+  }
+  .logo {
+    img {
+      height: 150px;
+      object-fit: contain;
+    }
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+    flex-wrap: wrap;
+    i {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #ccc;
+      color: #fff;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      &:hover {
+        background-color: var(--main-color);
+        color: #fff;
+        border-color: var(--main-color);
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    span {
+      color: #fff;
+      font-size: 1.1rem;
+      border-right: 1px solid rgb(145, 145, 145);
+      padding: 0 20px;
+      cursor: pointer;
+      &:last-of-type {
+        border: none;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &.ar {
+      span {
+        border-right: unset;
+        border-left: 1px solid rgb(145, 145, 145);
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+    @include xs {
+      gap: 10px;
+      span {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .rights {
+    margin-top: 50px;
+    p {
+      color: #fff;
+      font-size: 1.1rem;
+      text-align: center !important;
+      padding-top: 15px;
+      border-top: 1px solid rgb(126, 126, 126);
+      @include xs {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import '../../styles/mixins.scss';
+
+.navbar {
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  transition: all 0.3s ease-in-out;
+  &.scrolled {
+    background-color: #fff;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .navbar__logo {
+      img {
+        object-fit: contain;
+      }
+    }
+
+    .list {
+      ul {
+        display: flex;
+        gap: 20px;
+        li {
+          font-weight: 600;
+          cursor: pointer;
+          color: var(--main-color);
+          font-size: 1.2rem;
+          &.active {
+            color: var(--secondary-color);
+          }
+        }
+      }
+      @include md {
+        display: none;
+      }
+    }
+
+    .switch {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      @include xs {
+        gap: 10px;
+      }
+      .menuIcon {
+        display: none;
+        cursor: pointer;
+        @include md {
+          display: block;
+        }
+        p {
+          height: 3px;
+          width: 25px;
+          background-color: var(--main-color);
+          position: relative;
+          transition: all 0.3s ease-in-out;
+          &.top {
+            transform: rotate(45deg);
+            top: 4px;
+          }
+          &.bottom {
+            transform: rotate(-45deg);
+            bottom: 4px;
+          }
+        }
+      }
+    }
+  }
+}

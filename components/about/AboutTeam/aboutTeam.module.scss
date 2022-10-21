@@ -1,0 +1,87 @@
+@import '../../../styles/mixins.scss';
+
+.team {
+  margin-top: 150px;
+  margin-bottom: 150px;
+  .head {
+    margin-bottom: 50px;
+    h6, h1, p {
+      text-align: center !important;
+    }
+    h6 {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+    h1 {
+      font-size: 3rem;
+      color: var(--main-color);
+      @include xs {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+  }
+
+  .teamSwiper {
+    padding: 50px 0;
+    .slide {
+      max-width: 300px;
+      margin: auto;
+      .image {
+        border-radius: 50%;
+        border: 1px solid var(--main-color);
+        position: relative;
+        margin-bottom: 10px;
+        img:not(.rotate) {
+          border-radius: 50%;
+          padding: 10px;
+          transform: translateX(-6px) translateY(-6px);
+          transition: all 0.3s ease-out;
+        }
+        .rotate {
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          transition: all 0.3s ease-out;
+        }
+        &:hover {
+          img:not(.rotate) {
+            padding: 0px;
+            transform: translateX(0px) translateY(0px);
+          }
+          .rotate {
+            transform: rotate(90deg);
+          }
+        }
+      }
+      .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2 {
+          margin: 0;
+        }
+        p {
+          opacity: 0.8;
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+        }
+        i {
+          width: 50px;
+          height: 50px;
+          border: 1px solid #ccc;
+          border-radius: 50%;
+          display: grid;
+          place-items: center;
+          font-size: 1.3rem;
+          cursor: pointer;
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}

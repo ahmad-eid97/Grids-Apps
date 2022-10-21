@@ -1,0 +1,49 @@
+@import '../../../styles/mixins.scss';
+
+.fewWords {
+  margin-top: 100px;
+  .imageSide {
+    img {
+      object-fit: contain;
+      width: 90%;
+      margin: auto;
+      @include md {
+        max-width: 500px;
+      }
+    }
+  }
+
+  .details {
+    h6 {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+    h1 {
+      color: var(--main-color);
+      font-size: 3rem;
+      @include xs {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 50px;
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      img {
+        width: 70px;
+        height: 70px;
+      }
+      p {
+        margin: 0 0 20px 0;
+      }
+    }
+    @include md {
+      padding: 20px 30px;
+    }
+  }
+}

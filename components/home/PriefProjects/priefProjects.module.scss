@@ -1,0 +1,82 @@
+.head {
+  margin-bottom: 50px;
+  h1, p {
+    text-align: center !important;
+  }
+  h1 {
+    color: var(--main-color);
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+  }
+}
+
+.priefProjects {
+  background: url('../../../public/imgs/priefProjects/back.png');
+  background-position: fixed;
+  padding: 70px 20px 20px 20px;
+  .swiper2 {
+    margin-bottom: 50px;
+    direction: rtl !important;
+    * {
+      direction: rtl !important;
+    }
+    .slide {
+      border: 1px solid #fff;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      gap: 20px;
+      color: #fff;
+      direction: ltr !important;
+      cursor: pointer;
+      // background: var(--main-background-image);
+      // border-color: transparent;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      &:hover {
+        background: var(--main-background-image);
+        border-color: transparent;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    &.ar {
+      direction: ltr !important;
+      * {
+        direction: ltr !important;
+      }
+      .slide {
+        direction: rtl !important;
+      }
+    }
+  }
+  .swiper {
+    margin-bottom: 50px;
+    .slide {
+      border: 1px solid #fff;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      gap: 20px;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      &:hover {
+        background: var(--main-background-image);
+        border-color: transparent;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+}

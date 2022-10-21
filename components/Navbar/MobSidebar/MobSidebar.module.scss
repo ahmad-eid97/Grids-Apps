@@ -1,0 +1,223 @@
+@import '../../../styles/mixins.scss';
+
+.wrapper {
+
+  .dropLayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+  }
+  
+  .mobSidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    z-index: -1;
+    opacity: 0;
+    padding: 0 2px;
+    background-color: #fff;
+    &.ar {
+      left: unset;
+      right: -300px;
+    }
+
+    .items {
+      overflow: scroll;
+      height: 90%;
+      padding-top: 10px;
+      padding-right: 5px;
+      padding-left: 5px;
+
+      ul {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        color: var(--text-color);
+
+        li {
+          display: block;
+          width: 100%;
+          padding: 12px 20px;
+          font-size: 1rem;
+          cursor: pointer;
+          font-weight: bold;
+          position: relative;
+          text-transform: uppercase;
+          border-radius: 5px;
+          margin-bottom: 3px;
+
+          i {
+            font-size: 0.9rem;
+            margin-right: 10px;
+            &.ar {
+              margin-right: 0px;
+              margin-left: 10px;
+            }
+          }
+  
+          &:hover {
+            background-color: var(--main-color);
+            color: #fff;
+          }
+          &.active {
+            background-color: var(--main-color);
+            color: #fff;
+          }
+        }
+      }
+
+      svg {
+        position: relative;
+        top: 4px;
+        margin-right: 5px;
+        font-size: 22px;
+      }
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      /* Track */
+      &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px transparent;
+        border-radius: 2px;
+      }
+
+      /* Handle */
+      &::-webkit-scrollbar-thumb {
+        border-radius: 2px;
+      }
+      .item {
+        cursor: pointer;
+        box-shadow: none;
+        position: static;
+        min-height: 0;
+        margin: 0;
+        padding: 0px 20px;
+        div {
+          border: none;
+          padding: 0;
+          margin: 0;
+          box-shadow: none;
+          min-height: 0;
+          h4 {
+            font-size: 18px;
+          }
+          ul {
+            li {
+              font-size: 17px;
+              margin: 0px 0 10px;
+              transition: all 0.2s ease-in-out;
+              svg {
+                font-size: 10px;
+                position: relative;
+                top: 0;
+              }
+              &:hover {
+                padding-left: 10px;
+              }
+            }
+          }
+        }
+        h5 {
+          font-size: 18px;
+          font-weight: 500;
+          margin: 10px 0;
+          letter-spacing: 0;
+        }
+      }
+    }
+    
+  }
+
+  &.show {
+
+    .dropLayer {
+      background-color: rgba(0, 0, 0, 0.2);
+      display: block;
+    }
+
+    .mobSidebar {
+      animation: slide-in 0.3s forwards;
+      transition: all 0.1s ease-in-out;
+      opacity: 1;
+      z-index: 9999;
+      &.ar {
+        animation: slide-in-ar 0.3s forwards;
+      }
+
+    }
+    
+  }
+
+  &.hide {
+
+    .dropLayer {
+      background-color: transparent;
+      display: none;
+    }
+
+    .mobSidebar {
+      animation: slide-out 0.3s forwards;
+      transition: all 1s ease-in-out;
+      z-index: -1;
+      &.ar {
+        animation: slide-out-ar 0.3s forwards;
+        z-index: -1;
+      }
+    }
+
+  }
+
+}
+
+@keyframes slide-in {
+  0% {
+    left: -300px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -300px;
+  }
+}
+
+@keyframes slide-in-ar {
+  0% {
+    right: -300px;
+  }
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes slide-out-ar {
+  0% {
+    right: 0px;
+  }
+  100% {
+    right: -300px;
+  }
+}
+
+@keyframes showOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

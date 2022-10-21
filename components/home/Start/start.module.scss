@@ -1,0 +1,132 @@
+@import '../../../styles/mixins.scss';
+
+.start {
+  margin-top: 100px;
+  .details {
+    margin-top: -100px;
+    @include md {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin-top: 0px;
+      margin-bottom: 50px;
+    }
+    h6 {
+      color: var(--secondary-color);
+    }
+    h1 {
+      color: var(--main-color);
+      font-size: 3rem;
+      line-height: 3rem;
+      @include md {
+        text-align: center !important;
+      }
+      @include xs {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      font-size: 1.1rem;
+      opacity: 0.8;
+      @include md {
+        text-align: center !important;
+      }
+    }
+  }
+  .thumbs {
+    position: relative;
+    @include md {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      flex-direction: column-reverse;
+    }
+    @include xs {
+      width: 100%;
+    }
+    .features {
+      @include md {
+        display: flex;
+        margin-bottom: 50px;
+        justify-content: center;
+        gap: 40px;
+        align-items: space-between;
+        flex-wrap: wrap;
+      }
+      @include xs {
+        gap: 20px;
+      }
+      .one {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        position: absolute;
+        h6 {
+          font-size: 1.2rem;
+        }
+        i {
+          background-color: #fff;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          color: var(--main-color);
+          font-size: 2rem;
+          display: grid;
+          place-items: center;
+          box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3);
+        }
+        &:nth-of-type(1) {
+          top: 60%;
+          left: -100px;
+        }
+        &:nth-of-type(2) {
+          top: 73%;
+          left: 30px;
+        }
+        &:nth-of-type(3) {
+          top: 82%;
+          left: 120px;
+        }
+        @include md {
+          position: unset;
+          display: flex;
+          flex-direction: column-reverse;
+          gap: 10px;
+        }
+        @include sm {
+          i {
+            width: 70px;
+            height: 70px;
+            font-size: 1.5rem
+          }
+          h6 {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    &.ar {
+      .features {
+        .one {
+          &:nth-of-type(1) {
+            top: 60%;
+            left: unset;
+            right: -120px;
+          }
+          &:nth-of-type(2) {
+            top: 73%;
+            left: unset;
+            right: 0px;
+          }
+          &:nth-of-type(3) {
+            top: 82%;
+            left: unset;
+            right: 100px;
+          }
+        }
+      }
+    }
+  }
+}

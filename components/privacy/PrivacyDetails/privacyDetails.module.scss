@@ -1,0 +1,15 @@
+@import '../../../styles/mixins.scss';
+
+.privacyDetails {
+  margin-top: 50px;
+  .section {
+    margin-bottom: 50px;
+    h2 {
+      margin-bottom: 20px;
+      font-size: 2rem;
+      @include xs {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}

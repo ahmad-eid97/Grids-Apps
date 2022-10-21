@@ -1,0 +1,48 @@
+@import '../../../styles/mixins.scss';
+
+.notifications {
+  background: url('/imgs/notifications/newslater.jpg');
+  background-position: fixed;
+  background-size: cover;
+  color: #fff;
+  max-height: 500px;
+  margin-bottom: 200px;
+  margin-top: 400px;
+  @include lg {
+    max-height: unset !important;
+  }
+
+  .imageSide {
+    @include md {
+      display: none;
+    }
+    img {
+      transform: translateY(-150px);
+      object-fit: contain;
+      @include xxl {
+        transform: translateY(-50px);
+      }
+    }
+  }
+
+  .details {
+    transform: translateY(-150px);
+    width: 70%;
+    @include xxl {
+      transform: translateY(-50px);
+    }
+    @include lg {
+      width: 90%;
+    }
+    @include md {
+      transform: translateY(0px);
+      padding: 40px;
+    }
+    @include xs {
+      padding: 20px;
+    }
+    h1 {
+      font-size: 3rem
+    }
+  }
+}

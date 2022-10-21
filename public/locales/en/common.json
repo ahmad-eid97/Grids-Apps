@@ -1,0 +1,129 @@
+{
+  "header.title": "Get The Best App For iPhone & Android",
+  "header.content": "A simple, yet effective way to be more productive",
+
+  "start.howWorks": "How it works",
+  "start.simple": "Simple Process to Start",
+  "start.content": "Its easier than you think. Follow 3 simple easy steps",
+  "start.createAccount": "Create an account",
+  "start.configure": "Configure",
+  "start.automation": "Automation",
+
+  "solutions.title": "THE BEST SOLUTIONS for MOBILE and WEB APPS",
+  "solutions.content": "with Different Kinds like: Shop app, Recipe app, News/Blog app, Restaurant app, Fitness app, Events app, Lawyer app, Doctor Appointment App, Classified Ads app, Smart School app, Business Directory app, Real Estate listing app, Live TV app, Radio app, and much more.",
+
+  "testimonials.testimonials": "Testimonials",
+  "testimonials.title": "Don’t just take our word for it!",
+  "testimonials.content": "Thousands of professionals and business are already enjoying Apps. Hear what some of they are saying!",
+
+  "webApp.title": "Progressive Web App",
+  "webApp.content": "Developed with Angular 4.0, Progressive Web Apps are a new way to deliver an incomparable user experience on the web. Multi-platform, they bring features that have only been available for native apps until now to the web.",
+
+  "projects.title": "Check Out The Awesome Websites we Created",
+
+  "notification.title": "Push Notifications",
+  "notification.content": "Native apps are an essential tool for user engagement. They allow you to create direct and customized communication strategies with your users by sending manual or scheduled push notifications. Communicating with your users is a piece of cake. Keep them up to date without any effort, thanks to automatic notifications.",
+
+  "platforms.title": "We Build Amazing Apps for Different Platforms",
+  "platforms.pwa": "Progressive Web Apps",
+  "platforms.wa": "Wep Apps",
+  "platforms.ap": "Android Apps",
+  "platforms.ios": "IOS Apps",
+  "platforms.da": "Desktop Apps",
+
+  "priefProjects.title": "Our Projects In Prief",
+  "priefProjects.content": "with Different Kinds like: Shop app, Recipe app, News/Blog app, Restaurant app, Fitness app, Events app, Lawyer app, Doctor Appointment App, Classified Ads app, Smart School app, Business Directory app, Real Estate listing app, Live TV app, Radio app, and much more.",
+
+  "services.title": "Web Services we Provides to You",
+
+  "screenShots.title": "Check Out The Awesome Screenshots",
+  "screenShots.content": "Some of real Apps that had been Created By Grids-Apps Company, also we provides more styles and shapes for the apps form day to day.",
+
+  "team.team": "Meet our most valued",
+  "team.title": "Expert Team Members",
+  "team.content": "Our team of creative programmers,marketing experts, and members .we are to be doing what we love.",
+
+  "samples.features": "An Exhaustive list of Amazing Features",
+  "samples.title": "Ready to take your productivity to the next level?",
+  "samples.content": "Are you ready to make the leap? Download Apps for iOS or Android today — its free.",
+  "samples.started": "Ready to get started?",
+
+  "keepInTouch.title": "Stay with Us & Keep in touch",
+
+  "contact.getInTouch": "Get In Touch",
+  "contact.email": "Your Email",
+  "contact.subject": "Your Subject",
+  "contact.message": "Your Message",
+  "contact.agree": "I agree to receive emails, newsletters and promotional messages",
+  "contact.send": "Send Message",
+
+  "about.title": "About Us",
+  "about.home": "Home",
+  "about.about": "About Us",
+  "about.meet": "Meet our most valued",
+  "about.greatness": "We’re empowering teams to achieve greatness together.",
+  "about.content": "We are a passionate team of software developers, marketers, and designers focused on driving results for our clients in the fast-growing. We are making products loved by users all over the world.",
+  "about.fewWords": "A Few Words About Us",
+  "about.achieve": "We’re empowering teams to achieve greatness together.",
+  "about.desc": "We are a passionate team of software developers, marketers, and designers focused on driving results for our clients in the fast-growing. We are making products loved by users all over the world.",
+  "about.history": "Our history",
+  "about.successfull": "How We Became Successful",
+  "about.historyContent": "We always challenge the openness of higher possibilities without defining the limits of our teams and products. We test our hypotheses about new attempts and enjoy making our way around the world.",
+  "about.testimonials": "Testimonials",
+  "about.testimonialsTitle": "5000+ happy clients all around the world",
+
+  "servicesPage.title": "Our Services",
+  "services.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+  "services.experts": "We are Development Experts",
+
+  "testimonials.pageTitle": "Our Clients Testimonials",
+  "testimonials.pageContent": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+  "testimonials.pageTestimonials": "Testimonials",
+  "testimonials.pageTestimonialsTitle": "Our Clients Testimonials",
+
+  "team.members": "Team Members",
+  "team.home": "Home",
+  "team.pages": "Pages",
+
+  "team.meet": "Meet our most valued",
+  "team.expert": "Expert Team Members",
+  "team.pageContent": "Our team of creative programmers,marketing experts, and members .we are to be doing what we love.",
+  "team.download": "Download Mosto Today And Get Started With A Free Trial For Your Business",
+
+  "contact.title": "Contact Grids Apps",
+  "contact.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+  "contact.company": "Your Company Name",
+  "contact.name": "Your Full Name",
+  "contact.phone": "Phone Number",
+  "contact.questions": "Have questions?",
+  "contact.questionContent": "Have questions about payments or price plans? We have answers!",
+  "contact.emailUs": "Email Us",
+  "contact.callUs": "Call Us",
+  "contact.visit": "Visit Us",
+  "contact.easy": "We Are Easy To Find",
+
+  "faqs.title": "Questions & Answers",
+  "faqs.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+
+  "privacy.title": "Our Privacy Policy",
+  "privacy.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+
+  "terms.title": "Terms & Conditions",
+  "terms.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+
+  "partners.title": "Our Partners",
+  "partners.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+  "partners.meet": "Meet With Our Valuable Partner",
+  "partners.trust": "They trust us... would you?",
+  "partners.partners": "Our partners are some of the most reputable lenders on the market. Join their ranks and cooperate with us to increase your profit.",
+  "partners.worldWide": "Worldwide",
+  "partners.clients": "Clients Satisfied with our services",
+
+  "projects.pageTitle": "Our Awesome Projects",
+  "projects.pageContent": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+
+  "mobProjects.title": "Our Awesome Mobile Applications",
+  "mobProjects.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
+
+  "general.getStarted": "GET STARTED"
+}

@@ -1,0 +1,147 @@
+@import '../../../styles/extends.scss';
+
+.projectsList {
+  margin: 100px 0;
+  position: relative;
+  .backImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    object-fit: contain;
+  }
+  .project {
+    margin-bottom: 150px;
+    position: relative;
+    z-index: 2;
+    .images {
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      .image {
+        background: var(--main-background-image);
+        position: relative;
+        animation: rotate 8s forwards infinite;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        width: 200px;
+        height: 400px;
+        img {
+          padding: 5px;
+          position: relative;
+          z-index: 2;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          bottom: -20px;
+          left: 35%;
+          width: 70px;
+          height: 70px;
+          background: var(--main-background-image);
+          transform: rotate(-45deg);
+          box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        &:nth-of-type(1) {
+          animation: rotate2 8s forwards infinite;
+        }
+        &:nth-of-type(2) {
+          animation: jumping 3s forwards infinite;
+        }
+        &:nth-of-type(3) {
+          animation: jumping 3s forwards infinite;
+        }
+        @include md {
+          &:nth-of-type(4) {
+            display: none;
+          }
+        }
+        @include sm {
+          &:nth-of-type(3) {
+            display: none;
+          }
+          &:nth-of-type(2) {
+            animation: rotate 3s forwards infinite;
+          }
+        }
+        @include xs {
+          &:nth-of-type(1) {
+            animation: jumping 3s forwards infinite;
+          }
+          &:nth-of-type(2) {
+            display: none;
+          }
+        }
+        @keyframes rotate {
+          0% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(3deg);
+          }
+          50% {
+            transform: rotate(0deg);
+          }
+          75% {
+            transform: rotate(-3deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+        @keyframes rotate2 {
+          0% {
+            transform: rotate(0deg);
+          }
+          25% {
+            transform: rotate(-3deg);
+          }
+          50% {
+            transform: rotate(0deg);
+          }
+          75% {
+            transform: rotate(3deg);
+          }
+          100% {
+            transform: rotate(0deg);
+          }
+        }
+        @keyframes jumping {
+          0% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-40px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+      }
+    }
+    
+    .details {
+      display: flex;
+      align-items: center;
+      justify-items: center;
+      flex-direction: column;
+      h1 {
+        text-align: center !important;
+        @include xs {
+          font-size: 1.5rem
+        } 
+      }
+      button {
+        @extend %mainBtn;
+        margin-top: 30px;
+      }
+    }
+    @include xs {
+      margin-bottom: 100px;
+    }
+    &:nth-of-type(even) {
+      flex-direction: row-reverse;
+    }
+  }
+}

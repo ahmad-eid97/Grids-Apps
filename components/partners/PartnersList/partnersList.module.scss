@@ -1,0 +1,73 @@
+@import '../../../styles/mixins.scss';
+
+.partnersList {
+  margin-top: 50px;
+  .head {
+    h6, h1, p {
+      text-align: center !important;
+    }
+    h6 {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+    h1 {
+      color: var(--main-color);
+      font-size: 3rem;
+      @include xs {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-bottom: 50px;
+    }
+  }
+  .partner {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+    }
+    &:hover {
+      box-shadow: 0px 17px 24px 0px rgb(18 83 252 / 51%);
+    }
+  }
+  .clients {
+    margin-top: 100px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background: url('/imgs/partners/back.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    h6 {
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+    h2 {
+      font-size: 4rem;
+      @include xs {
+        font-size: 2.5rem;
+      }
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    @include xs {
+      height: 200px;
+    }
+  }
+}
