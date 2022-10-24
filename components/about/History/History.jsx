@@ -10,7 +10,7 @@ import { useTranslation } from 'next-i18next';
 
 import cls from './history.module.scss';
 
-const History = () => {
+const History = ({ ourHistory }) => {
   const [mounted, setMounted] = useState(false);
   const { t, i18n } = useTranslation('common');
 
@@ -72,86 +72,18 @@ const History = () => {
           loop={true}
           className={`${cls.swiper} historySwiper`}
         >
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={`${cls.box} box`}>
-                <h6>We Are Growing</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum</p>
+          {ourHistory.topics.map((topic, idx) => (
+            <SwiperSlide key={idx}>
+              <div className={cls.slide}>
+                <div className={`${cls.box} box`}>
+                  <h6>{topic.title}</h6>
+                  <p>{topic.details}</p>
+                </div>
+                <p className={`${cls.line} line`}></p>
+                <p className={cls.circle}></p>
               </div>
-              <p className={`${cls.line} line`}></p>
-              <p className={cls.circle}></p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={`${cls.box} box`}>
-                <h6>We Are Growing</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum</p>
-              </div>
-              <p className={`${cls.line} line`}></p>
-              <p className={cls.circle}></p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={`${cls.box} box`}>
-                <h6>We Are Growing</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum</p>
-              </div>
-              <p className={`${cls.line} line`}></p>
-              <p className={cls.circle}></p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={`${cls.box} box`}>
-                <h6>We Are Growing</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum</p>
-              </div>
-              <p className={`${cls.line} line`}></p>
-              <p className={cls.circle}></p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={`${cls.box} box`}>
-                <h6>We Are Growing</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum</p>
-              </div>
-              <p className={`${cls.line} line`}></p>
-              <p className={cls.circle}></p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={`${cls.box} box`}>
-                <h6>We Are Growing</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum</p>
-              </div>
-              <p className={`${cls.line} line`}></p>
-              <p className={cls.circle}></p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={`${cls.box} box`}>
-                <h6>We Are Growing</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum</p>
-              </div>
-              <p className={`${cls.line} line`}></p>
-              <p className={cls.circle}></p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={`${cls.box} box`}>
-                <h6>We Are Growing</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum</p>
-              </div>
-              <p className={`${cls.line} line`}></p>
-              <p className={cls.circle}></p>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
 
       </Container>

@@ -15,15 +15,18 @@
   .swiper {
     padding: 50px 10px 150px;
     .slide {
-      background: linear-gradient(180deg, #F8F8F8 0%, rgb(205, 231, 247) 100%);
+      background: var(--main-background-image);
       padding: 30px;
       border-radius: 20px;
       box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease-in-out;
+      color: #fff;
       &:hover {
-        background: var(--main-background-image);
-        color: #fff;
         transform: translateY(-50px);
+        background: linear-gradient(270deg, rgba(71,71,253,1) 0%, rgba(58,180,255,1) 100%);
+        h3 {
+          color: #f8b117;
+        }
       }
     }
     &.swiper2 {

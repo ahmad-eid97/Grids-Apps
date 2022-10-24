@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 
 import cls from './teamMembers.module.scss';
 
-const TeamMembers = () => {
+const TeamMembers = ({ teamMembers }) => {
   const { t, i18n } = useTranslation('common');
 
   return (
@@ -24,178 +24,30 @@ const TeamMembers = () => {
 
         </div>
 
-        <Grid container spacing={10}>
+        <Grid container spacing={10} justifyContent="center">
 
-          <Grid item xs={12} sm={6} lg={4}>
+          {teamMembers.topics.map((member, idx) => (
 
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
+            <Grid item xs={12} sm={6} lg={4} key={idx}>
+
+              <div className={cls.member}>
+                
+                <div className={cls.image}>
+                  <img src={member.photo_file ? member.photo_file : "/img/testimonials/default.jpg"} alt="categoryName" />
+                  <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
+                </div>
+
+                <div className={cls.details}>
+                  <h2>{member.title}</h2>
+                  <p>{member.fields.find(f => f.title === 'Job').value}</p>
+                  <i className="fa-brands fa-linkedin-in"></i>
+                </div>
+
               </div>
 
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
+            </Grid>
 
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} lg={4}>
-
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} lg={4}>
-
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} lg={4}>
-
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} lg={4}>
-
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} lg={4}>
-
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} lg={4}>
-
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} lg={4}>
-
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} lg={4}>
-
-            <div className={cls.member}>
-              
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-
-            </div>
-
-          </Grid>
+          ))}
 
         </Grid>
 

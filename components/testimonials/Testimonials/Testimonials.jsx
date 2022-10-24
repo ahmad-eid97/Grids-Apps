@@ -11,8 +11,9 @@ import { useTranslation } from 'next-i18next';
 
 import cls from './testimonials.module.scss';
 
-const Testimonials = () => {
+const Testimonials = ({ testimonials, testimonialsVideos }) => {
 	const [isOpen, setOpen] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState({})
   const { t, i18n } = useTranslation('common');
 
   return (
@@ -36,74 +37,43 @@ const Testimonials = () => {
 
               <div className={cls.clients}>
 
-                <div className={cls.client}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
-                    </div>
-                  </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
+                {testimonials.topics.slice(0, 3).map((single, idx) => (
 
-                <div className={`${cls.client} ${cls.active}`}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
+                  <div className={cls.client} key={idx}>
+                    <div className={cls.user}>
+                      <img src={single.photo_file ? single.photo_file : "/imgs/testimonials/default.jpg"} alt="userImage" />
+                      <div className={cls.details}>
+                        <h4>{single.title}</h4>
+                        <p>{single.fields.find(f => f.title === 'job').value}</p>
+                      </div>
                     </div>
+                    <Rating name="read-only" value={5} readOnly />
+                    <p>{single.details}</p>
+                    <h6>Grids Apps Clients</h6>
                   </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
 
-                <div className={cls.client}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
-                    </div>
-                  </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
+                ))}
 
               </div>
 
               <div className={cls.clients}>
 
-                <div className={cls.client}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
-                    </div>
-                  </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
+                {testimonials.topics.slice(5, 7).map((single, idx) => (
 
-                <div className={cls.client}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
+                  <div className={cls.client} key={idx}>
+                    <div className={cls.user}>
+                      <img src={single.photo_file ? single.photo_file : "/imgs/testimonials/default.jpg"} alt="userImage" />
+                      <div className={cls.details}>
+                        <h4>{single.title}</h4>
+                        <p>{single.fields.find(f => f.title === 'job').value}</p>
+                      </div>
                     </div>
+                    <Rating name="read-only" value={5} readOnly />
+                    <p>{single.details}</p>
+                    <h6>Grids Apps Clients</h6>
                   </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
+
+                ))}
 
               </div>
 
@@ -129,74 +99,43 @@ const Testimonials = () => {
 
               <div className={cls.clients}>
 
-                <div className={cls.client}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
-                    </div>
-                  </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
+                {testimonials.topics.slice(3, 5).map((single, idx) => (
 
-                <div className={cls.client}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
+                  <div className={cls.client} key={idx}>
+                    <div className={cls.user}>
+                      <img src={single.photo_file ? single.photo_file : "/imgs/testimonials/default.jpg"} alt="userImage" />
+                      <div className={cls.details}>
+                        <h4>{single.title}</h4>
+                        <p>{single.fields.find(f => f.title === 'job').value}</p>
+                      </div>
                     </div>
+                    <Rating name="read-only" value={5} readOnly />
+                    <p>{single.details}</p>
+                    <h6>Grids Apps Clients</h6>
                   </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
+
+                ))}
 
               </div>
 
               <div className={cls.clients}>
 
-                <div className={cls.client}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
-                    </div>
-                  </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
+                {testimonials.topics.slice(7, 10).map((single, idx) => (
 
-                <div className={`${cls.client} ${cls.active}`}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
+                  <div className={cls.client} key={idx}>
+                    <div className={cls.user}>
+                      <img src={single.photo_file ? single.photo_file : "/imgs/testimonials/default.jpg"} alt="userImage" />
+                      <div className={cls.details}>
+                        <h4>{single.title}</h4>
+                        <p>{single.fields.find(f => f.title === 'job').value}</p>
+                      </div>
                     </div>
+                    <Rating name="read-only" value={5} readOnly />
+                    <p>{single.details}</p>
+                    <h6>Grids Apps Clients</h6>
                   </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
 
-                <div className={cls.client}>
-                  <div className={cls.user}>
-                    <img src="/imgs/testimonials/me.jpg" alt="userImage" />
-                    <div className={cls.details}>
-                      <h4>ahmad eid</h4>
-                      <p>front end developer</p>
-                    </div>
-                  </div>
-                  <Rating name="read-only" value={5} readOnly />
-                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo recusandae quis impedit rerum non dignissimos quas ipsa sed dolores harum.</p>
-                  <h6>Awesome App</h6>
-                </div>
+                ))}
 
               </div>
 
@@ -210,53 +149,25 @@ const Testimonials = () => {
 
           <Grid container spacing={5}>
 
-            <Grid item md={4}>
-              <div className={cls.video}>
-                <img src="/imgs/testimonials/video.png" alt="videoImage" />
-                <i className="fa-duotone fa-play" onClick={()=> setOpen(true)}></i>
-              </div>
-            </Grid>
+            {testimonialsVideos.topics.map((video, idx) => (
 
-            <Grid item md={4}>
-              <div className={cls.video}>
-                <img src="/imgs/testimonials/video.png" alt="videoImage" />
-                <i className="fa-duotone fa-play" onClick={()=> setOpen(true)}></i>
-              </div>
-            </Grid>
+              <Grid item md={4} key={idx}>
+                <div className={cls.video}>
+                  <img src={video.photo_file} alt={video.title} />
+                  <i className="fa-duotone fa-play" onClick={()=> {
+                    setOpen(true)
+                    setCurrentVideo(video.fields.find(f => f.title === 'link').value)
+                  }}></i>
+                </div>
+              </Grid>
 
-            <Grid item md={4}>
-              <div className={cls.video}>
-                <img src="/imgs/testimonials/video.png" alt="videoImage" />
-                <i className="fa-duotone fa-play" onClick={()=> setOpen(true)}></i>
-              </div>
-            </Grid>
-
-            <Grid item md={4}>
-              <div className={cls.video}>
-                <img src="/imgs/testimonials/video.png" alt="videoImage" />
-                <i className="fa-duotone fa-play" onClick={()=> setOpen(true)}></i>
-              </div>
-            </Grid>
-
-            <Grid item md={4}>
-              <div className={cls.video}>
-                <img src="/imgs/testimonials/video.png" alt="videoImage" />
-                <i className="fa-duotone fa-play" onClick={()=> setOpen(true)}></i>
-              </div>
-            </Grid>
-
-            <Grid item md={4}>
-              <div className={cls.video}>
-                <img src="/imgs/testimonials/video.png" alt="videoImage" />
-                <i className="fa-duotone fa-play" onClick={()=> setOpen(true)}></i>
-              </div>
-            </Grid>
+            ))}
 
           </Grid>
 
         </div>
 
-        <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId="ObZwFExwzOo" onClose={() => setOpen(false)} />
+        <ModalVideo channel='youtube' autoplay isOpen={isOpen} videoId={currentVideo} onClose={() => {setOpen(false); setCurrentVideo({})}} />
 
       </Container>
 

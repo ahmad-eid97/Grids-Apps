@@ -40,7 +40,7 @@ const Accordion = ({ data }) => {
 
         <Box className={`${cls.label} ${cls[i18n.language]}`}>
 
-          {data.label}
+          {data.title}
 
         </Box>
 
@@ -57,7 +57,7 @@ const Accordion = ({ data }) => {
         <Box className={cls.accordionBody}>
 
           <p>
-            {data.content}
+            {data.details}
           </p>
 
         </Box>

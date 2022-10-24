@@ -2,12 +2,13 @@
 import Container from '@mui/material/Container';
 
 import { useTranslation } from 'next-i18next';
+import Link from 'next/link';
 
 import cls from './download.module.scss';
 
-const Download = () => {
+const Download = ({ teamLinks }) => {
   const { t, i18n } = useTranslation('common');
-
+  
   return (
     <div className={cls.download}>
 
@@ -18,8 +19,11 @@ const Download = () => {
           <h1>{t("team.download")}</h1>
 
           <div>
-            <img src="/imgs/team/apple.png" alt="apple" />
-            <img src="/imgs/team/google.png" alt="apple" />
+            {teamLinks.topics.map((link, idx) => (
+              <Link href={link.fields.find(f => f.title === 'link').value} key={idx}>
+                <img src={link.photo_file} alt={link.title} />
+              </Link>
+            ))}
           </div>
 
         </div>

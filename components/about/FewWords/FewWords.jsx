@@ -5,7 +5,7 @@ import { useTranslation } from 'next-i18next';
 
 import cls from './fewWords.module.scss';
 
-const FewWords = () => {
+const FewWords = ({ aboutUsData }) => {
   const { t, i18n } = useTranslation('common');
 
   return (
@@ -16,7 +16,7 @@ const FewWords = () => {
         <Grid item xs={12} lg={6}>
 
           <div className={cls.imageSide}>
-            <img src="/imgs/about/about.png" alt="aboutImage" />
+            <img src={aboutUsData.topics[0].photo_file} alt="aboutImage" />
           </div>
 
         </Grid>
@@ -27,9 +27,9 @@ const FewWords = () => {
 
             <h6>{t('about.fewWords')}</h6>
 
-            <h1>{t('about.achieve')}</h1>
+            <h1>{aboutUsData.topics[0].title}</h1>
 
-            <p>{t('about.desc')}</p>
+            <p>{aboutUsData.topics[0].details}</p>
 
             <Grid container>
 
@@ -38,7 +38,7 @@ const FewWords = () => {
                 <div className={cls.feature}>
                   <img src="/imgs/about/counter1.png" alt="" />
                   <div>
-                    <h2>45K</h2>
+                    <h2>{aboutUsData.topics[0].fields.find(f => f.title === 'total users').value}K</h2>
                     <p>Total User</p>
                   </div>
                 </div>
@@ -50,7 +50,7 @@ const FewWords = () => {
                 <div className={cls.feature}>
                   <img src="/imgs/about/counter2.png" alt="" />
                   <div>
-                    <h2>45K</h2>
+                    <h2>{aboutUsData.topics[0].fields.find(f => f.title === 'projects number').value}K</h2>
                     <p>Total User</p>
                   </div>
                 </div>
@@ -62,7 +62,7 @@ const FewWords = () => {
                 <div className={cls.feature}>
                   <img src="/imgs/about/counter3.png" alt="" />
                   <div>
-                    <h2>45K</h2>
+                    <h2>{aboutUsData.topics[0].fields.find(f => f.title === 'happy clients').value}K</h2>
                     <p>Total User</p>
                   </div>
                 </div>
@@ -76,6 +76,32 @@ const FewWords = () => {
         </Grid>
 
       </Grid>
+
+      {aboutUsData.topics.slice(1, aboutUsData.topics.length).map((data, idx) => (
+        <Grid container spacing={5} alignItems="center" key={idx} className={cls.sectionWrapper}>
+
+          <Grid item xs={12} lg={6}>
+
+            <div className={cls.imageSide}>
+              <img src={data.photo_file} alt="aboutImage" />
+            </div>
+
+          </Grid>
+
+          <Grid item xs={12} lg={6}>
+
+            <div className={cls.details}>
+
+              <h1>{data.title}</h1>
+
+              <p>{data.details}</p>
+
+            </div>
+
+          </Grid>
+
+        </Grid>
+      ))}
 
     </div>
   )

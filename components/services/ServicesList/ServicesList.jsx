@@ -6,7 +6,7 @@ import { useTranslation } from 'next-i18next';
 
 import cls from './servicesList.module.scss';
 
-const ServicesList = () => {
+const ServicesList = ({  servicesFeatures, servicesList }) => {
   const { t, i18n } = useTranslation('common');
 
   return (
@@ -22,50 +22,24 @@ const ServicesList = () => {
 
         <Grid container spacing={5} justifyContent="center">
 
-          <Grid item xs={12} sm={6} md={4}>
+          {servicesFeatures.topics.map((feature, idx) => (
 
-            <div className={cls.one}>
+            <Grid item xs={12} sm={6} md={4} key={idx}>
 
-              <img src="/imgs/services/counter1.png" alt="image" />
+              <div className={cls.one}>
 
-              <div>
-                <p>17501</p>
-                <span>Premium User</span>
+                <img src={feature.photo_file} alt="image" />
+
+                <div>
+                  <p>{feature.fields.find(f => f.title === 'number').value}</p>
+                  <span>{feature.title}</span>
+                </div>
+
               </div>
 
-            </div>
+            </Grid>
 
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={4}>
-
-            <div className={cls.one}>
-
-              <img src="/imgs/services/counter2.png" alt="image" />
-
-              <div>
-                <p>1987</p>
-                <span>Daily Visitors</span>
-              </div>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} sm={6} md={4}>
-
-            <div className={cls.one}>
-
-              <img src="/imgs/services/counter5.png" alt="image" />
-
-              <div>
-                <p>95%</p>
-                <span>Satisfaction</span>
-              </div>
-
-            </div>
-
-          </Grid>
+          ))}
 
         </Grid>
 
@@ -75,149 +49,49 @@ const ServicesList = () => {
 
         <div className={cls.services}>
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
+          {servicesList.topics.slice(0, Math.floor((servicesList.topics.length / 3))).map((service, idx) => (
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
+            <div className={cls.service} key={idx}>
+              <div>
+                <i className="fa-light fa-shuttlecock"></i>
+                <h2>{service.title}</h2>
+              </div>
+              <p>{service.details}</p>
             </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
-
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
-
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
-
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
+          ))}
 
         </div>
 
         <div className={cls.services}>
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
+          {servicesList.topics.slice(Math.floor((servicesList.topics.length / 3)), Math.floor(((servicesList.topics.length * 2) / 3))).map((service, idx) => (
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
+            <div className={cls.service} key={idx}>
+              <div>
+                <i className="fa-light fa-shuttlecock"></i>
+                <h2>{service.title}</h2>
+              </div>
+              <p>{service.details}</p>
             </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
-
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
-
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
-
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
+          ))}
 
         </div>
 
         <div className={cls.services}>
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
+          {servicesList.topics.slice(Math.floor(((servicesList.topics.length * 2) / 3)), servicesList.topics.length).map((service, idx) => (
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
+            <div className={cls.service} key={idx}>
+              <div>
+                <i className="fa-light fa-shuttlecock"></i>
+                <h2>{service.title}</h2>
+              </div>
+              <p>{service.details}</p>
             </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
 
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
-
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
-
-          <div className={cls.service}>
-            <div>
-              <i className="fa-light fa-shuttlecock"></i>
-              <h2>testing one</h2>
-            </div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?ipsum dolor sit amet consectetur adipisicing elit. Est nobis pariatur consectetur. Veniam fuga maxime excepturi placeat architecto ex totam iure in deleniti odio. Laborum eligendi impedit provident ex vel?</p>
-          </div>
+          ))}
 
         </div>
 

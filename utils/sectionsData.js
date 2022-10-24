@@ -12,5 +12,17 @@ export const sections_ids = {
   screenshots: 22,
   teamMembers: 23,
   samples: 25,
-  addresses: 24
+  addresses: 24,
+  aboutUs: 36,
+  history: 37,
+  servicesFeatures: 30,
+  servicesList: 2,
+  testimonialsVideos: 27,
+  teamLinks: 29,
+  webProjects: 26,
+  mobProjects: 33,
+  terms: 28,
+  privacy: 31,
+  faqs: 34,
+  faqsVideo: 35
 }

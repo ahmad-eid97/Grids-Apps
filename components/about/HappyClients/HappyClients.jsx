@@ -11,7 +11,7 @@ import { useTranslation } from 'next-i18next';
 
 import cls from './happyClients.module.scss';
 
-const HappyClients = () => {
+const HappyClients = ({ testimonials }) => {
   const { t, i18n } = useTranslation('common');
 
   return (
@@ -32,26 +32,20 @@ const HappyClients = () => {
             navigation
             className={cls.swiper}
           >
-            <SwiperSlide>
-              <div className={cls.slide}>
-                <img src="/imgs/testimonials/me.jpg" alt="userImage" />
+            {testimonials.topics.map((client, idx) => (
 
-                <Rating name="read-only" value={5} readOnly />
-                <p>Awesome product. The guys have put huge effort into this app and focused on simplicity and ease of use. Awesome product. The guys have put huge effort into this app and focused on simplicity and ease of use. Awesome product. The guys have put huge effort into this app and focused on simplicity and ease of use.</p>
+              <SwiperSlide key={idx}>
+                <div className={cls.slide}>
+                  <img src={client.photo_file ? client.photo_file : "/imgs/testimonials/default.jpg"} alt="userImage" />
 
-                <h5>ahmad eid</h5>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={cls.slide}>
-                <img src="/imgs/testimonials/me.jpg" alt="userImage" />
+                  <Rating name="read-only" value={+client.fields.find(f => f.title === 'rate').value} readOnly />
+                  <p>{client.details}</p>
 
-                <Rating name="read-only" value={5} readOnly />
-                <p>Awesome product. The guys have put huge effort into this app and focused on simplicity and ease of use.</p>
+                  <h5>{client.title}</h5>
+                </div>
+              </SwiperSlide>
 
-                <h5>ahmad eid</h5>
-              </div>
-            </SwiperSlide>
+            ))}
           </Swiper>
 
         </div>

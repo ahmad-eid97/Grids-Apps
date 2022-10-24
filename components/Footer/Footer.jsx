@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
+
 import Container from '@mui/material/Container';
 
 import { useTranslation } from 'next-i18next';
@@ -30,16 +32,26 @@ const Footer = () => {
         </div>
 
         <div className={`${cls.links} ${cls[i18n.language]}`}>
-
-          <span>{t("footer.about")}</span>
-
-          <span>{t("footer.faqs")}</span>
-
-          <span>{t("footer.contact")}</span>
-
-          <span>{t("footer.terms")}</span>
-
-          <span>{t("footer.privacy")}</span>
+          
+          <Link href="/about">
+            <span>{t("footer.about")}</span>
+          </Link>
+          
+          <Link href="/faqs">
+            <span>{t("footer.faqs")}</span>
+          </Link>
+          
+          <Link href="/contact">
+            <span>{t("footer.contact")}</span>
+          </Link>
+          
+          <Link href="/terms">
+            <span>{t("footer.terms")}</span>
+          </Link>
+          
+          <Link href="/privacy-policy">
+            <span>{t("footer.privacy")}</span>
+          </Link>
 
         </div>
 

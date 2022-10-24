@@ -14,20 +14,32 @@
       margin-bottom: 30px;
     }
     .field {
+      margin-bottom: 15px;
       label {
         display: block;
         font-weight: 600;
         margin: 5px 8px;
         color: var(--secondary-color);
       }
-      input {
+      input, textarea {
         width: 100%;
         padding: 10px 20px;
         border-radius: 20px;
         border: 1px solid #ccc;
         outline: none;
-        margin-bottom: 15px;
         background-color: #f6f6fa;
+        &.error {
+          border-color: var(--error-alert);
+        }
+      }
+      span {
+        color: var(--error-alert);
+        margin: 0 10px;
+      }
+      textarea {
+        min-height: 120px;
+        outline: none;
+        resize: none;
       }
     }
     p {

@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next';
 
 import cls from './aboutTeam.module.scss';
 
-const AboutTeam = () => {
+const AboutTeam = ({ teamMembers }) => {
   const { t, i18n } = useTranslation('common');
 
   const breakpoints = {
@@ -57,62 +57,22 @@ const AboutTeam = () => {
           breakpoints={breakpoints}
           className={`${cls.teamSwiper}`}
         >
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
+          {teamMembers.topics.map((member, idx) => (
+            <SwiperSlide key={idx}>
+              <div className={cls.slide}>
+                <div className={cls.image}>
+                  <img src={member.photo_file ? member.photo_file : "/imgs/testimonials/default.jpg"} alt="categoryName" />
+                  <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
+                </div>
 
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
+                <div className={cls.details}>
+                  <h2>{member.title}</h2>
+                  <p>{member.fields.find(f => f.title === 'Job').value}</p>
+                  <i className="fa-brands fa-linkedin-in"></i>
+                </div>
               </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className={cls.slide}>
-              <div className={cls.image}>
-                <img src="/imgs/testimonials/me.jpg" alt="categoryName" />
-                <img src="/imgs/team/topTeam.png" alt="image" className={cls.rotate} />
-              </div>
-
-              <div className={cls.details}>
-                <h2>Ahmad Eid</h2>
-                <p>Front end developer</p>
-                <i className="fa-brands fa-linkedin-in"></i>
-              </div>
-            </div>
-          </SwiperSlide>
+            </SwiperSlide>
+          ))}
         </Swiper>
 
       </Container>

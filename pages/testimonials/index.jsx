@@ -4,11 +4,14 @@ import langRedirection from '../../utils/redirections/langRedirection/langRedire
 import routeRedirection from '../../utils/redirections/routeRedirection/routeRedirection';
 
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { wrapper } from '../../store/store';
 
-const Testimonials = () => {
+import axios from '../../utils/axios';
+import { sections_ids } from '../../utils/sectionsData';
+
+const Testimonials = ({ testimonials, testimonialsVideos }) => {
   return (
     <div>
 
@@ -16,7 +19,7 @@ const Testimonials = () => {
       <TestimonialsHead />
 
       {/* TESTIMONIAL SECTION */}
-      <TestimialsList />
+      <TestimialsList testimonials={testimonials} testimonialsVideos={testimonialsVideos} />
 
     </div>
   )
@@ -30,11 +33,38 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
       if (languageRedirection) return languageRedirection;
       if (routerRedirection) return routerRedirection;
+
+      let error = false;
+
+      // FETCH SAMPLES
+      let testimonials = [];
+
+      const TESTIMONIALS = await axios.get(`/topics/${sections_ids.testimonials}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
+
+      if (TESTIMONIALS) testimonials = TESTIMONIALS.data;
+
+      // FETCH SAMPLES
+      let testimonialsVideos = [];
+
+      const TESTIMONIALS_VIDEOS = await axios.get(`/topics/${sections_ids.testimonialsVideos}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
+
+      if (TESTIMONIALS_VIDEOS) testimonialsVideos = TESTIMONIALS_VIDEOS.data;
+
+      if (error) {
+        return {
+          redirect: {
+            destination: '/404',
+            permanent: false
+          }
+        }
+      }
  
       return {
         props: {
           ...(await serverSideTranslations(locale, ["common", "nav"])),
-          locale
+          locale,
+          testimonials,
+          testimonialsVideos
         },
       };
     }

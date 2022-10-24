@@ -5,9 +5,9 @@ import { useTranslation } from 'next-i18next';
 
 import cls from './contactForm.module.scss';
 
-const ContactMap = () => {
+const ContactMap = ({ currentMap }) => {
   const { t, i18n } = useTranslation('common');
-
+  
   return (
     <div className={cls.contactMap}>
 
@@ -18,9 +18,8 @@ const ContactMap = () => {
         <h1>{t("contact.easy")}</h1>
 
         <div className={cls.map}>
-          <div className="gmap_canvas">
-            <iframe id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-            <a href="https://putlocker-is.org"></a><a href="https://www.embedgooglemap.net"></a>
+          <div className="gmap_canvas" id="gmap_canvas">
+            <iframe src={'https://maps.google.com/maps?q=' + `${currentMap.maps[0].longitude}` + ',' + `${currentMap.maps[0].latitude}` + '&t=&z=15&ie=UTF8&iwloc=&output=embed'} />
           </div>
           <div className={cls.back}></div>
         </div>

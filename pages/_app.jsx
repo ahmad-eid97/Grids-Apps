@@ -10,12 +10,15 @@ import ThemeContextProvider from '../theme/theme';
 // STORE STUFF
 import { wrapper } from '../store/store';
 
+import { ToastContainer } from "react-toastify";
+
 // TRANSLATION STUFF
 import { appWithTranslation } from "next-i18next";
 
 import Cookies from 'universal-cookie';
 const cookie = new Cookies();
 
+import "react-toastify/dist/ReactToastify.css";
 import "react-modal-video/scss/modal-video.scss";
 import '../public/css/all.min.css';
 import '../styles/globals.scss';
@@ -36,7 +39,7 @@ class MyApp extends App {
   }
 
   gotToTop = () => {
-    document.body.scrollTo(0, 0)
+    document.body.scrollTo(0, 0);
   }
 
   componentDidMount() {
@@ -77,6 +80,16 @@ class MyApp extends App {
               <link rel="icon" href="/imgs/navbar/favicon.png" />
               <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet"></link>
             </Head>
+            {/* TOASTFY COMPONENT */}
+            <ToastContainer
+              position={locale === "ar" ? "top-left" : "top-right"}
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={locale === "ar" ? true : false}
+              pauseOnHover
+            />
             <Navbar />
             <Component {...pageProps} />
             {this.state.showLoader && <Loader />}

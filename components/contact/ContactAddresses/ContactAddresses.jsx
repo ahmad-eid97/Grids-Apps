@@ -3,10 +3,12 @@ import Grid from '@mui/material/Grid';
 
 import { useTranslation } from 'next-i18next';
 
+import axios from '../../../utils/axios';
+
 import cls from './contactAddresses.module.scss';
 
-const ContactAddresses = () => {
-  const { t, i18n } = useTranslation('common')
+const ContactAddresses = ({ addresses, getAddressMap }) => {
+  const { t, i18n } = useTranslation('common');
 
   return (
     <div className={cls.contactAddresses}>
@@ -21,69 +23,25 @@ const ContactAddresses = () => {
 
         <Grid container spacing={3}>
 
-          <Grid item xs={12} md={6}>
+          {addresses.topics.map((address, idx) => (
 
-            <div className={cls.way}>
+            <Grid item xs={12} md={6} key={idx}>
 
-              <i className="fa-sharp fa-solid fa-location-check"></i>
+              <div className={cls.way}>
 
-              <h2>New York – Seagram Building</h2>
+                <i className="fa-sharp fa-solid fa-location-check" onClick={() => getAddressMap(address)}></i>
 
-              <p>00971 4 453 2605</p>
-              
-              <p>Mon – to – Sat … 8am-6pm</p>
+                <h2>{address.title}</h2>
 
-            </div>
+                <p>{address.fields.find(f => f.title === 'Number').value}</p>
+                
+                <p>{address.fields.find(f => f.title === 'Time').value}</p>
 
-          </Grid>
+              </div>
 
-          <Grid item xs={12} md={6}>
+            </Grid>
 
-            <div className={cls.way}>
-
-              <i className="fa-sharp fa-solid fa-location-check"></i>
-
-              <h2>Dubai – AlHabtour – Floor 21</h2>
-
-              <p>00971 4 453 2605</p>
-              
-              <p>Mon – to – Sat … 8am-6pm</p>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-
-            <div className={cls.way}>
-
-              <i className="fa-sharp fa-solid fa-location-check"></i>
-
-              <h2>Jordan – Amman – Alabdali</h2>
-
-              <p>+(970)-599-814-392</p>
-              
-              <p>Sat – to – Thu … 8am-6pm</p>
-
-            </div>
-
-          </Grid>
-
-          <Grid item xs={12} md={6}>
-
-            <div className={cls.way}>
-
-              <i className="fa-sharp fa-solid fa-location-check"></i>
-
-              <h2>Palestine – Ramallah – Alersal</h2>
-
-              <p>+(970)-599-814-392</p>
-              
-              <p>Sat – to – Thu … 8am-6pm</p>
-
-            </div>
-
-          </Grid>
+          ))}
 
         </Grid>
 
