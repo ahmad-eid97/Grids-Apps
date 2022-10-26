@@ -51,25 +51,37 @@ const MobileMenu = ({ mobSidebar, setMobSidebar, setMenuClosed }) => {
             <Link href="/" passHref>
               <li onClick={close} className={`${router.pathname == "/" ? cls.active : ""}`}>
                 <i className={`fa-regular fa-square ${cls[i18n.language]}`}></i>
-                Home
+                {t('nav.home')}
               </li>
             </Link>
             <Link href="/about" passHref>
               <li onClick={close} className={`${router.pathname == "/about" ? cls.active : ""}`}>
                 <i className={`fa-regular fa-square ${cls[i18n.language]}`}></i>
-                About Us
+                {t('nav.about')}
               </li>
             </Link>
             <Link href="/services" passHref>
               <li onClick={close} className={`${router.pathname == "/services" ? cls.active : ""}`}> 
                 <i className={`fa-regular fa-square ${cls[i18n.language]}`}></i>
-                Services
+                {t('nav.services')}
+              </li>
+            </Link>
+            <Link href="/testimonials" passHref>
+              <li onClick={close} className={`${router.pathname == "/testimonials" ? cls.active : ""}`}> 
+                <i className={`fa-regular fa-square ${cls[i18n.language]}`}></i>
+                {t('nav.testimonials')}
+              </li>
+            </Link>
+            <Link href="/team" passHref>
+              <li onClick={close} className={`${router.pathname == "/team" ? cls.active : ""}`}> 
+                <i className={`fa-regular fa-square ${cls[i18n.language]}`}></i>
+                {t('nav.team')}
               </li>
             </Link>
             <Link href="/contact" passHref>
               <li onClick={close} className={`${router.pathname == "/contact" ? cls.active : ""}`}>
                 <i className={`fa-regular fa-square ${cls[i18n.language]}`}></i>
-                Contact
+                {t('nav.contact')}
               </li>
             </Link>
           </ul>

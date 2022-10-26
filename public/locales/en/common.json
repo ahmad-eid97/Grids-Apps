@@ -31,6 +31,10 @@
   "platforms.ios": "IOS Apps",
   "platforms.da": "Desktop Apps",
 
+  "samples.android": "Android",
+  "samples.ios": "IOS",
+  "samples.web": "Web",
+
   "priefProjects.title": "Our Projects In Prief",
   "priefProjects.content": "with Different Kinds like: Shop app, Recipe app, News/Blog app, Restaurant app, Fitness app, Events app, Lawyer app, Doctor Appointment App, Classified Ads app, Smart School app, Business Directory app, Real Estate listing app, Live TV app, Radio app, and much more.",
 
@@ -101,6 +105,9 @@
   "contact.callUs": "Call Us",
   "contact.visit": "Visit Us",
   "contact.easy": "We Are Easy To Find",
+  "contact.submitted": "Message sent successfully",
+  "contact.emptyField": "This field can not be empty",
+  "contact.emailNotValid": "Please enter valid email",
 
   "faqs.title": "Questions & Answers",
   "faqs.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
@@ -125,5 +132,6 @@
   "mobProjects.title": "Our Awesome Mobile Applications",
   "mobProjects.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
 
-  "general.getStarted": "GET STARTED"
+  "general.getStarted": "GET STARTED",
+  "general.showProject": "SHOW PROJECT"
 }

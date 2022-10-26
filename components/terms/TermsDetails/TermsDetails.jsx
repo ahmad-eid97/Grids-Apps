@@ -34,8 +34,7 @@ const TermsDetails = ({ setCurrentTab, allSections }) => {
 
         <div className={cls.section} id={idx} key={idx}>
           <h2>{section.topics[0].title}</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget euismod erat, sit amet vulputate enim. Etiam enim tellus, maximus vel augue sed, pharetra hendrerit orci. Vivamus sed massa in nibh imperdiet mattis quis sed augue. Pellentesque erat metus, vestibulum nec nisl.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget euismod erat, sit amet vulputate enim. Etiam enim tellus.</p>
+          <p>{section.topics[0].details}</p>
         </div>
 
       ))}

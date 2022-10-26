@@ -39,7 +39,7 @@ const FewWords = ({ aboutUsData }) => {
                   <img src="/imgs/about/counter1.png" alt="" />
                   <div>
                     <h2>{aboutUsData.topics[0].fields.find(f => f.title === 'total users').value}K</h2>
-                    <p>Total User</p>
+                    <p>{aboutUsData.topics[0].fields.find(f => f.title === 'total users').title}</p>
                   </div>
                 </div>
 
@@ -51,7 +51,7 @@ const FewWords = ({ aboutUsData }) => {
                   <img src="/imgs/about/counter2.png" alt="" />
                   <div>
                     <h2>{aboutUsData.topics[0].fields.find(f => f.title === 'projects number').value}K</h2>
-                    <p>Total User</p>
+                    <p>{aboutUsData.topics[0].fields.find(f => f.title === 'projects number').title}</p>
                   </div>
                 </div>
 
@@ -63,7 +63,7 @@ const FewWords = ({ aboutUsData }) => {
                   <img src="/imgs/about/counter3.png" alt="" />
                   <div>
                     <h2>{aboutUsData.topics[0].fields.find(f => f.title === 'happy clients').value}K</h2>
-                    <p>Total User</p>
+                    <p>{aboutUsData.topics[0].fields.find(f => f.title === 'projects number').title}</p>
                   </div>
                 </div>
 

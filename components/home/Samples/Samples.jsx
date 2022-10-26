@@ -11,8 +11,6 @@ const Samples = ({ samples }) => {
   const [selectedSample, setSelectedSample] = useState(samples.topics[0] || {})
   const { t, i18n } = useTranslation('common');
 
-  console.log(samples)
-
   return (
     <div className={cls.wrapper}>
 
@@ -46,19 +44,19 @@ const Samples = ({ samples }) => {
                   {sample.fields.find(f => f.title === 'Type').value === '1' && 
                     <>
                       <i className="fa-brands fa-apple"></i>
-                      <h5>IOS</h5>  
+                      <h5>{t('samples.ios')}</h5>  
                     </>
                   }
                   {sample.fields.find(f => f.title === 'Type').value === '2' && 
                     <>
                       <i className="fa-brands fa-android"></i>
-                      <h5>Andriod</h5>
+                      <h5>{t('samples.android')}</h5>
                     </>
                   }
                   {sample.fields.find(f => f.title === 'Type').value === '3' && 
                     <>
                       <i className="fa-sharp fa-solid fa-desktop"></i>
-                      <h5>Web</h5>
+                      <h5>{t('samples.web')}</h5>
                     </>
                   }
                   

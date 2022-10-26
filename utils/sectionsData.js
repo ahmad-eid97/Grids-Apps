@@ -24,5 +24,7 @@ export const sections_ids = {
   terms: 28,
   privacy: 31,
   faqs: 34,
-  faqsVideo: 35
+  faqsVideo: 35,
+  partners: 9,
+  clientsSatisfied: 32
 }

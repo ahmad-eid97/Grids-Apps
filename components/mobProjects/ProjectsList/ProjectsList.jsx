@@ -4,9 +4,12 @@ import { useRouter } from 'next/router';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 
+import { useTranslation } from 'next-i18next';
+
 import cls from './projectsList.module.scss';
 
 const ProjectsList = ({ mobProjects }) => {
+  const { t } = useTranslation('common')
   const router = useRouter()
 
   return (
@@ -44,7 +47,7 @@ const ProjectsList = ({ mobProjects }) => {
 
               <h1>{project.title}</h1>
 
-              <button onClick={() => router.push(`/${project.fields.find(f => f.title === 'link').value}`)}>SHOW PROJECT</button>
+              <button onClick={() => router.push(`/${project.fields.find(f => f.title === 'link').value}`)}>{t('general.showProject')}</button>
 
             </div>
 

@@ -110,106 +110,36 @@ export const getServerSideProps = wrapper.getServerSideProps(
 
       // TO HANDLE IF THERE IS ANY ERROR IN ANY AXIOS REQUEST TO REDIRECT USER TO 404 PAGE...
       let error = false
+      
+      // GET ALL SECTIONS DATA
+      const getSectionsData = async (sectionID) => {
+        const response = await axios.get(`/topics/${sectionID}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
+        if (response) return response.data
+      }
 
-      // FETCH HEADER SLIDER
-      let headerSlider = [];
+      const allSectionsLinks = [
+        sections_ids.headerSlider,
+        sections_ids.steps,
+        sections_ids.notifications,
+        sections_ids.testimonials,
+        sections_ids.solutions,
+        sections_ids.pwaFeatures,
+        sections_ids.projects,
+        sections_ids.platforms,
+        sections_ids.priefProjects,
+        sections_ids.webServices,
+        sections_ids.screenshots,
+        sections_ids.teamMembers,
+        sections_ids.samples,
+        sections_ids.addresses
+      ]
 
-      const HEADER_SLIDER = await axios.get(`/topics/${sections_ids.headerSlider}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
+      const allLinks = allSectionsLinks.map(link => {
+        return getSectionsData(link)
+      })
 
-      if (HEADER_SLIDER) headerSlider = HEADER_SLIDER.data;
-
-      // FETCH HEADER SLIDER
-      let steps = [];
-
-      const STEPS = await axios.get(`/topics/${sections_ids.steps}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (STEPS) steps = STEPS.data;
-
-      // FETCH NOTIFICATIONS
-      let notifications = [];
-
-      const NOTIFICATIONS = await axios.get(`/topics/${sections_ids.notifications}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (NOTIFICATIONS) notifications = NOTIFICATIONS.data;
-
-      // FETCH TESTIMONIALS
-      let testimonials = [];
-
-      const TESTIMONIALS_RESPONSE = await axios.get(`/topics/${sections_ids.testimonials}/page/${1}/count/${50}/${locale}`).catch((err) => {
-        error = true
-      });
-
-      if (TESTIMONIALS_RESPONSE) testimonials = TESTIMONIALS_RESPONSE.data;
-
-      // FETCH SOLUTIONS
-      let solutions = [];
-
-      const SOLUTIONS_LIST = await axios.get(`/topics/${sections_ids.solutions}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (SOLUTIONS_LIST) solutions = SOLUTIONS_LIST.data;
-
-      // FETCH SOLUTIONS
-      let pwaFeatures = [];
-
-      const PWAFEATURES_LIST = await axios.get(`/topics/${sections_ids.pwaFeatures}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (PWAFEATURES_LIST) pwaFeatures = PWAFEATURES_LIST.data;
-
-      // FETCH PROJECTS
-      let projects = [];
-
-      const PROJECTS = await axios.get(`/topics/${sections_ids.projects}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (PROJECTS) projects = PROJECTS.data;
-
-      // FETCH PLATFORMS
-      let platforms = [];
-
-      const PLATFORMS = await axios.get(`/topics/${sections_ids.platforms}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (PLATFORMS) platforms = PLATFORMS.data;
-
-      // FETCH PRIEF PROJECTS
-      let priefProjects = [];
-
-      const PRIEF_PROJECTS = await axios.get(`/topics/${sections_ids.priefProjects}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (PRIEF_PROJECTS) priefProjects = PRIEF_PROJECTS.data;
-
-      // FETCH WEB SERVICES
-      let webServices = [];
-
-      const WEB_SERVICES = await axios.get(`/topics/${sections_ids.webServices}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (WEB_SERVICES) webServices = WEB_SERVICES.data;
-
-      // FETCH SCREENSHOTS
-      let screenshots = [];
-
-      const SCREENSHOTS = await axios.get(`/topics/${sections_ids.screenshots}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (SCREENSHOTS) screenshots = SCREENSHOTS.data;
-
-      // FETCH TEAM
-      let teamMembers = [];
-
-      const TEAM = await axios.get(`/topics/${sections_ids.teamMembers}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (TEAM) teamMembers = TEAM.data;
-
-      // FETCH SAMPLES
-      let samples = [];
-
-      const SAMPLES = await axios.get(`/topics/${sections_ids.samples}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (SAMPLES) samples = SAMPLES.data;
-
-      // FETCH SAMPLES
-      let addresses = [];
-
-      const ADDRESSES = await axios.get(`/topics/${sections_ids.addresses}/page/${1}/count/${50}/${locale}`).catch(() => error = true);
-
-      if (ADDRESSES) addresses = ADDRESSES.data;
+      // GREAT WAY TO MAKE ALL REQUESTS AT THE SAME TIME
+      const allSections = await Promise.all([...allLinks]).catch(() => error = true);
 
 
       // RETURN STATEMENTS
@@ -224,20 +154,20 @@ export const getServerSideProps = wrapper.getServerSideProps(
         props: {
           ...(await serverSideTranslations(locale, ["common", "nav"])),
           locale,
-          headerSlider,
-          steps,
-          notifications,
-          solutions,
-          testimonials,
-          pwaFeatures,
-          projects,
-          platforms,
-          priefProjects,
-          webServices,
-          screenshots,
-          teamMembers,
-          samples,
-          addresses
+          headerSlider: allSections.find(s => s.section_title === 'HeaderSlider'),
+          steps: allSections.find(s => s.section_title === 'steps'),
+          notifications: allSections.find(s => s.section_title === 'Notifications'),
+          testimonials: allSections.find(s => s.section_title === 'Testimonials'),
+          solutions: allSections.find(s => s.section_title === 'solutions'),
+          pwaFeatures: allSections.find(s => s.section_title === 'PWAFeatures'),
+          projects: allSections.find(s => s.section_title === 'Projects'),
+          platforms: allSections.find(s => s.section_title === 'Platforms'),
+          priefProjects: allSections.find(s => s.section_title === 'Prief Projects'),
+          webServices: allSections.find(s => s.section_title === 'Web Services'),
+          screenshots: allSections.find(s => s.section_title === 'Screenshots'),
+          teamMembers: allSections.find(s => s.section_title === 'Team'),
+          samples: allSections.find(s => s.section_title === 'Circle Projects'),
+          addresses: allSections.find(s => s.section_title === 'address')
         },
       };
     }

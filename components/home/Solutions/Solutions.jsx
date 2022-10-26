@@ -55,9 +55,9 @@ const Solutions = ({ solutions }) => {
 
                       <i className="fa-sharp fa-solid fa-list-tree"></i>
 
-                      <h1>Full CMS</h1>
+                      <h1>{solution.title}</h1>
 
-                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos officiis nesciunt reiciendis voluptatum unde impedit reprehenderit tenetur doloremque, sint autem debitis exercitationem, eius veniam voluptate, ullam ad saepe eaque maxime?</p>
+                      <p>{solution.details}</p>
 
                     </div>
                   </SwiperSlide>

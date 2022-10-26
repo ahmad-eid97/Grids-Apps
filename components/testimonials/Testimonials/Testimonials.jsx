@@ -49,7 +49,6 @@ const Testimonials = ({ testimonials, testimonialsVideos }) => {
                     </div>
                     <Rating name="read-only" value={5} readOnly />
                     <p>{single.details}</p>
-                    <h6>Grids Apps Clients</h6>
                   </div>
 
                 ))}
@@ -70,7 +69,6 @@ const Testimonials = ({ testimonials, testimonialsVideos }) => {
                     </div>
                     <Rating name="read-only" value={5} readOnly />
                     <p>{single.details}</p>
-                    <h6>Grids Apps Clients</h6>
                   </div>
 
                 ))}
@@ -111,7 +109,6 @@ const Testimonials = ({ testimonials, testimonialsVideos }) => {
                     </div>
                     <Rating name="read-only" value={5} readOnly />
                     <p>{single.details}</p>
-                    <h6>Grids Apps Clients</h6>
                   </div>
 
                 ))}
@@ -132,7 +129,6 @@ const Testimonials = ({ testimonials, testimonialsVideos }) => {
                     </div>
                     <Rating name="read-only" value={5} readOnly />
                     <p>{single.details}</p>
-                    <h6>Grids Apps Clients</h6>
                   </div>
 
                 ))}

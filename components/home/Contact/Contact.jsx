@@ -91,7 +91,7 @@ const Contact = () => {
               <div className={cls.field}>
                 <label>{t("contact.name")}</label>
                 <input type="text" placeholder={t("contact.name")} name='contact_name' value={fields.contact_name || ''} onChange={(e) => handleFields(e)} className={!fields.contact_name && emptyFields ? cls.error : ''} />
-                {!fields.contact_name && emptyFields && <span>This field can not be empty</span>}
+                {!fields.contact_name && emptyFields && <span>{t('contact.emptyField')}</span>}
               </div>
 
               <div className={cls.field}>
@@ -99,8 +99,8 @@ const Contact = () => {
                 <label>{t("contact.email")}</label>
 
                 <input type="text" placeholder={t("contact.email")} name='contact_email' value={fields.contact_email || ''} onChange={(e) => handleFields(e)} className={!fields.contact_email && emptyFields ? cls.error : ''} />
-                {!fields.contact_email && emptyFields && <span>This field can not be empty</span>}
-                {errorEmail && <span>Email is not valid</span>}
+                {!fields.contact_email && emptyFields && <span>{t('contact.emptyField')}</span>}
+                {errorEmail && <span>{t('contact.emailNotValid')}</span>}
 
               </div>
 
@@ -109,7 +109,7 @@ const Contact = () => {
                 <label>{t("contact.subject")}</label>
 
                 <input type="text" placeholder={t("contact.subject")} name='contact_subject' value={fields.contact_subject || ''} onChange={(e) => handleFields(e)} className={!fields.contact_subject && emptyFields ? cls.error : ''} />
-                {!fields.contact_subject && emptyFields && <span>This field can not be empty</span>}
+                {!fields.contact_subject && emptyFields && <span>{t('contact.emptyField')}</span>}
 
               </div>
 
@@ -118,7 +118,7 @@ const Contact = () => {
                 <label>{t("contact.message")}</label>
 
                 <textarea type="text" placeholder={t("contact.message")} name='contact_message' value={fields.contact_message || ''} onChange={(e) => handleFields(e)} className={!fields.contact_message && emptyFields ? cls.error : ''}></textarea>
-                {!fields.contact_message && emptyFields && <span>This field can not be empty</span>}
+                {!fields.contact_message && emptyFields && <span>{t('contact.emptyField')}</span>}
 
               </div>
 

@@ -34,7 +34,6 @@ const Testimonials = ({ testimonials }) => {
                     </div>
                     <Rating name="read-only" value={+singleTestimonial.fields.find(one => one.title === 'rate').value} readOnly />
                     <p>{singleTestimonial.details}</p>
-                    <h6>Grids Apps Feedback</h6>
                   </div>
 
                 ))}
@@ -55,7 +54,6 @@ const Testimonials = ({ testimonials }) => {
                   </div>
                   <Rating name="read-only" value={+singleTestimonial.fields.find(one => one.title === 'rate').value} readOnly />
                     <p>{singleTestimonial.details}</p>
-                    <h6>Grids Apps Feedback</h6>
                   </div>
 
                 ))}
