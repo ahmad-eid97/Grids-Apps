@@ -25,6 +25,8 @@ const LangSwitch = () => {
     if (currentLang === 'en') lang = 'ar'
     else lang = 'en'
 
+    location.reload()
+
     setLang(lang)
     i18n.changeLanguage(lang)
     cookie.set('GridsAppsLang', lang, {path: "/"})

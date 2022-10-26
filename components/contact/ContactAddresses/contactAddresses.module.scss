@@ -34,7 +34,11 @@
       position: absolute;
       top: -50px;
       left: 40%;
-      transition: all 0.5s ease-in-out;
+      transition: rotate 0.5s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        border: 2px solid #f8b117;
+      }
       @include xs {
         left: 35%;
       }
@@ -47,7 +51,7 @@
       text-align: center !important;
     }
     &:hover {
-      box-shadow: 0px 17px 24px 0px rgb(18 83 252 / 51%);
+      box-shadow: 0px 10px 15px 0px rgb(18 83 252 / 30%);
       i {
         animation: show 2s linear infinite;
       }

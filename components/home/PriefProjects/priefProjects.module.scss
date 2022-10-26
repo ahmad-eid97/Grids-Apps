@@ -14,7 +14,8 @@
 }
 
 .priefProjects {
-  background: url('../../../public/imgs/priefProjects/back.png');
+  // background: url('../../../public/imgs/priefProjects/back.png');
+  background: var(--main-background-image);
   background-position: fixed;
   padding: 70px 20px 20px 20px;
   .swiper2 {
@@ -24,7 +25,7 @@
       direction: rtl !important;
     }
     .slide {
-      border: 1px solid #fff;
+      // border: 1px solid #fff;
       border-radius: 20px;
       display: flex;
       justify-content: center;
@@ -34,16 +35,21 @@
       color: #fff;
       direction: ltr !important;
       cursor: pointer;
-      // background: var(--main-background-image);
-      // border-color: transparent;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      // box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
       &:hover {
-        background: var(--main-background-image);
+        // background: var(--main-background-image);
         border-color: transparent;
       }
       img {
         width: 40px;
         height: 40px;
+        transition: all 0.2s ease-in-out;
+        filter: grayscale(0.9);
+      }
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
       }
     }
     &.ar {
@@ -59,7 +65,7 @@
   .swiper {
     margin-bottom: 50px;
     .slide {
-      border: 1px solid #fff;
+      // border: 1px solid #fff;
       border-radius: 20px;
       display: flex;
       justify-content: center;
@@ -68,14 +74,21 @@
       gap: 20px;
       color: #fff;
       cursor: pointer;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      // box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
       &:hover {
-        background: var(--main-background-image);
+        // background: var(--main-background-image);
         border-color: transparent;
       }
       img {
         width: 40px;
         height: 40px;
+        transition: all 0.2s ease-in-out;
+        filter: grayscale(0.9);
+      }
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
       }
     }
   }
