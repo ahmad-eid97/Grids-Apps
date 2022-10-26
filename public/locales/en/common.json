@@ -132,6 +132,9 @@
   "mobProjects.title": "Our Awesome Mobile Applications",
   "mobProjects.content": "Whether you are looking for a demo, have a support question or a commercial query get in touch.",
 
+  "notFound.message": "OoOps, You seem to be lost or something went wrong!",
+  "notFound.return": "Return to home page",
+
   "general.getStarted": "GET STARTED",
   "general.showProject": "SHOW PROJECT"
 }
