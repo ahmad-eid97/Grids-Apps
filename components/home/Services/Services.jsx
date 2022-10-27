@@ -1,4 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
+
 import Container from '@mui/material/Container';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -80,6 +82,14 @@ const Services = ({ webServices }) => {
             ))}
           </Swiper>
 
+        </div>
+
+        <div className={cls.btn}>
+          <button>
+            <Link href="/services">
+              SEE MORE
+            </Link>
+          </button>
         </div>
 
       </Container>

@@ -51,6 +51,7 @@ class MyApp extends App {
       this.setState({
         showLoader: true
       })
+      document.body.scrollTo(0, 0);
     })
 
     Router.events.on('routeChangeComplete', () => {
