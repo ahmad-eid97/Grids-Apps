@@ -13,7 +13,7 @@
   &::before {
     content: '';
     position: absolute;
-    top: -2px;
+    top: -20px;
     right: 0;
     background: url('../../public/imgs/footer/footer-shape.png') no-repeat center bottom;
     background-size: cover;
@@ -44,9 +44,9 @@
       place-items: center;
       cursor: pointer;
       &:hover {
-        background-color: var(--main-color);
+        background-color: #FC6C02;
         color: #fff;
-        border-color: var(--main-color);
+        border-color: #FC6C02;
       }
     }
   }

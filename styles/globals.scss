@@ -711,7 +711,7 @@ button.swal2-cancel {
 
 .projectSwiper {
   .swiper-slide-next {
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    // box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
     transform: scale(1.5) !important;
     z-index: 999;
     @include sm {
